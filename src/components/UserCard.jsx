@@ -1,7 +1,7 @@
 import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
 
-const UserCard = ({avatar, first_name, last_name, employment}) => {
+const UserCard = ({avatar, first_name, last_name, employment, gender, username, phone_number}) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     return ( 
@@ -15,10 +15,14 @@ const UserCard = ({avatar, first_name, last_name, employment}) => {
                 <p>Title: {employment.title}</p>
             </div>
             <div 
-                className="bg-white text-center rounded-md h-75 w-50" 
+                className="text-center bg-white rounded-md h-75 w-50" 
                 onMouseEnter={()=>setIsFlipped(prevIsFlipped => !prevIsFlipped)}
             >
-                More Information here...
+                <h2>Username: {username}</h2>
+                <hr />
+                <p>Phone: {phone_number}</p>
+                <hr />
+                <p>Gender: {gender}</p>
             </div>
         </ReactCardFlip>
     );
